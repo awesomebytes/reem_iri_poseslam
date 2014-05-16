@@ -57,6 +57,12 @@ cd ~/poseslam_ws/src/poseSLAM/build
 cmake ..
 make
 ```
+
+Test if we have all the dependences
+```
+rosdep install --from-paths src --ignore-src --rosdistro hydro -y
+```
+
 Compile ROS stuff
 ```
 cd ~/poseslam_ws
