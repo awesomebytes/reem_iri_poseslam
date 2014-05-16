@@ -48,7 +48,7 @@ TODO: This should be fixed someway
 Setup Eigen in this shell
 ```
 export CMAKE_PREFIX_PATH=~/poseslam_ws/src/eigen-eigen-6b38706d90a9:$CMAKE_PREFIX_PATH
-export CMAKE_MODULE_PATH=~/poseslam_ws/src/eigen-eigen-6b38706d90a9/cmake:$CMAKE_MODULE_PATH
+export CMAKE_MODULE_PATH=~/poseslam_ws/src/eigen-eigen-6b38706d90a9/cmake:~/poseslam_ws/src/poseSLAM:$CMAKE_MODULE_PATH
 ```
 
 Compile poseSLAM
