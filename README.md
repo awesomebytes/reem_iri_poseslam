@@ -35,7 +35,7 @@ tar -xvf 3.2.1.tar.gz
 ```
 cd ~/poseslam_ws/src
 wstool init .
-wstool merge poseslam.rosinstall
+wstool merge https://raw.githubusercontent.com/awesomebytes/reem_iri_poseslam/master/poseslam.rosinstall
 wstool up -j4
 ```
 
@@ -55,5 +55,7 @@ cmake ..
 make
 ```
 # Compile ROS stuff
+cd ~/poseslam_ws
+catkin_make
 
 
