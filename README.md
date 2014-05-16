@@ -58,7 +58,8 @@ cmake ..
 make
 ```
 Compile ROS stuff
+```
 cd ~/poseslam_ws
 catkin_make
-
+```
 
