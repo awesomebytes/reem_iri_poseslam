@@ -42,7 +42,8 @@ wstool merge https://raw.githubusercontent.com/awesomebytes/reem_iri_poseslam/ma
 wstool up -j4
 ```
 
-Change in poseSLAM/FindposeSLAM.cmake "~/iri-lab/labrobotica/algorithms/poseSLAM" for "~/poseslam_ws/src/poseSLAM/lib"
+Change in poseSLAM/FindposeSLAM.cmake poseslam_local_path to your path.
+SET(poseslam_local_path ~/poseslam_ws/src/poseSLAM)
 TODO: This should be fixed someway
 
 Setup Eigen in this shell
@@ -63,9 +64,11 @@ Test if we have all the dependences
 rosdep install --from-paths src --ignore-src --rosdistro hydro -y
 ```
 
+
 Compile ROS stuff
 ```
 cd ~/poseslam_ws
+catkin_make --only-pkg-with-deps iri_poseslam --cmake-args -DCMAKE_MODULE_PATH=~/poseslam_ws/src/poseSLAM
 catkin_make
 ```
 
