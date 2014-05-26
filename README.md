@@ -65,10 +65,43 @@ rosdep install --from-paths src --ignore-src --rosdistro hydro -y
 ```
 
 
-Compile ROS stuff
+Compile ROS stuff 
 ```
+source ~/reem-sim_ws/devel/setup.bash
 cd ~/poseslam_ws
 catkin_make --only-pkg-with-deps iri_poseslam --cmake-args -DCMAKE_MODULE_PATH=~/poseslam_ws/src/poseSLAM
 catkin_make
 ```
 
+=================
+
+# How to launch REEM and poseSLAM:
+
+Remember to source our workspace first in any terminal you will use:
+
+```
+source ~/poseslam_ws/devel/setup.bash
+```
+
+Now launch a REEM simulation:
+```
+roslaunch reem_iri_poseslam reem_simulation.launch
+```
+
+Launch poseSLAM and it's needed stuff (odom to odom_rel):
+```
+roslaunch reem_iri_poseslam poseslam_occ_REEM.launch
+```
+
+
+Launch a Rviz to see what is happening:
+```
+rosrun rviz  rviz -d `rospack find reem_iri_poseslam`/config/reem_and_poseslam.rviz
+```
+
+Finally you can teleop the robot from another terminal running:
+```
+rosrun reem_iri_poseslam key_teleop.py
+```
+
+(Note that the window must be in focus when pressing the arrows of the keyboard).
