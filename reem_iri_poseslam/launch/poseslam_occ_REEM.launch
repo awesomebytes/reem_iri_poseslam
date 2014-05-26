@@ -47,6 +47,20 @@
       <param name="~publish_tf"   value="true"/>
 </node> -->
 
+<!-- ODOM 2 ODOM_REL -->
+<node name="odom_2_odomrel"
+      pkg="iri_poseslam"
+      type="odom_2_odomrel"
+      output="screen">
+      <remap from="~odom" to="/mobile_base_controller/odom" />
+      <remap from="~odom_rel" to="/odom_rel" />
+
+      <param name="~covariance_factor"  value="0.01"/>
+</node>
+
+
+
+
 <node name="sensors_2_link"
       pkg="iri_poseslam"
       type="sensors_2_link"

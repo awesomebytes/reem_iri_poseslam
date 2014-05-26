@@ -1,0 +1,13 @@
+<launch>
+
+<node name="odom_2_odomrel"
+      pkg="iri_poseslam"
+      type="odom_2_odomrel"
+      output="screen">
+      <remap from="~odom" to="/mobile_base_controller/odom" />
+      <remap from="~odom_rel" to="/odom_rel" />
+
+      <param name="~covariance_factor"  value="0.01"/>
+</node>
+
+</launch>
