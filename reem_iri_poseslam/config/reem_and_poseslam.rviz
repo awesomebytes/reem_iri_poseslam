@@ -7,8 +7,9 @@ Panels:
         - /Global Options1
         - /Status1
         - /reem1
+        - /reem1/LaserScan1
         - /iri_poseslam1
-        - /iri_poseslam1/Marker1/Status1
+        - /PointCloud21
       Splitter Ratio: 0.61745
     Tree Height: 697
   - Class: rviz/Selection
@@ -541,15 +542,15 @@ Visualization Manager:
           Axis: Z
           Channel Name: intensity
           Class: rviz/LaserScan
-          Color: 255; 255; 255
-          Color Transformer: Intensity
+          Color: 0; 255; 0
+          Color Transformer: FlatColor
           Decay Time: 0
           Enabled: true
           Invert Rainbow: false
           Max Color: 255; 255; 255
           Max Intensity: 999999
           Min Color: 0; 0; 0
-          Min Intensity: 3.36312e-44
+          Min Intensity: 3.74567e-42
           Name: LaserScan
           Position Transformer: XYZ
           Queue Size: 10
@@ -584,7 +585,7 @@ Visualization Manager:
       Color: 255; 25; 0
       Enabled: true
       Keep: 100
-      Length: 1
+      Length: 0.3
       Name: Odometry
       Position Tolerance: 0.1
       Topic: /mobile_base_controller/odom
@@ -596,7 +597,7 @@ Visualization Manager:
           Marker Topic: /trajectory_2_markers/CovarianceMarkers
           Name: CovarianceMarkers
           Namespaces:
-            {}
+            /positions: true
           Queue Size: 100
           Value: true
         - Class: rviz/MarkerArray
@@ -636,6 +637,35 @@ Visualization Manager:
           Value: true
       Enabled: true
       Name: iri_poseslam
+    - Alpha: 0.6
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 999999
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.05
+      Style: Flat Squares
+      Topic: /trajectory_scans_2_pointcloud/laser_pointcloud
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -660,17 +690,17 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 15.9174
+      Distance: 22.5985
       Focal Point:
-        X: 0.858411
-        Y: -0.419651
-        Z: 0.537126
+        X: -0.808082
+        Y: 0.21787
+        Z: 0.0271969
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.815398
+      Pitch: 0.945398
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.4454
+      Yaw: 1.58039
     Saved: ~
 Window Geometry:
   Displays:
