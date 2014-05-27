@@ -1,0 +1,11 @@
+<launch>
+	<node name="trajectory_scans_2_pointcloud"
+	      pkg="iri_poseslam"
+	      type="trajectory_scans_2_pointcloud"
+	      output="screen">
+	      <remap from="~scan" to="/scan_filtered" />
+	      <remap from="~trajectory" to="/iri_poseslam/trajectory" />
+
+	      <param name="~publish_redundant"  value="true"/>
+	</node>
+</launch>
