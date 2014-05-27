@@ -12,8 +12,8 @@
 
       <param name="~pd_range_1" value="0.1"/> <!--usually 0.2 - If prob.of 2 poses of being closer than 'matchArea' > 'pd.first' we try to close a loop -->
       <param name="~pd_range_2" value="0.9"/> <!--usually 0.9 - If prob.of 2 poses of being closer than 'matchArea' > 'pd.second' they are close enough for one of them to be redundant-->
-      <param name="~ig_range_1" value="1.0"/> <!--usually 7.0 - If information gain < 'ig.first' the current pose is redundant -->
-      <param name="~ig_range_2" value="1.0"/> <!--usually 11.0 - If information gain > 'ig.second' we try to create a loop -->
+      <param name="~ig_range_1" value="5.0"/> <!--usually 7.0 - If information gain < 'ig.first' the current pose is redundant -->
+      <param name="~ig_range_2" value="11.0"/> <!--usually 11.0 - If information gain > 'ig.second' we try to create a loop -->
 
       <param name="~closing_loop_noise_xx"   value="7.25483e-04"/>
       <param name="~closing_loop_noise_xy"   value="-8.98881e-05"/>
