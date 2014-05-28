@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="upc_mrn" type="exploration_frontiers" name="explore_frontiers" clear_params="true">
+    <remap from="map" to="/trajectory_scans_2_occgrid/occupancy_grid"/>
+
+  </node>
+</launch>
