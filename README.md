@@ -83,23 +83,6 @@ Remember to source our workspace first in any terminal you will use:
 source ~/poseslam_ws/devel/setup.bash
 ```
 
-We need to modify the REEM model (until we do a relay node that gives the info how poseSLAM likes it):
-```
-rosed reem_description/urdf/base/base.urdf.xacro
-```
-
-On line 265, change this:
-```
- <origin xyz="${base_laser_x} ${base_laser_y} ${base_laser_z}" rpy="${180.0 * deg_to_rad} 0 0" />
-```
-For
-```
- <origin xyz="${base_laser_x} ${base_laser_y} ${base_laser_z}" rpy="${0.0 * deg_to_rad} 0 0" />
-```
-
-This un-rotates the laser which is inverted in real life.
-
-
 Now launch a REEM simulation:
 ```
 roslaunch reem_iri_poseslam reem_simulation.launch
@@ -107,7 +90,7 @@ roslaunch reem_iri_poseslam reem_simulation.launch
 
 Launch poseSLAM and it's needed stuff (odom to odom_rel):
 ```
-roslaunch reem_iri_poseslam poseslam_occ_REEM.launch
+roslaunch reem_iri_poseslam poseslam_occ_REEM_ig_ranges_modif.launch
 ```
 
 
@@ -122,3 +105,5 @@ rosrun reem_iri_poseslam key_teleop.py
 ```
 
 (Note that the window must be in focus when pressing the arrows of the keyboard).
+
+TODO: To run exploration with simple frontiers method....

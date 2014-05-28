@@ -12,3 +12,9 @@
 # Dependencies iri_core and iri_laser_icp
 - svn: {local-name: iri_core, uri: 'https://devel.iri.upc.edu/pub/labrobotica/ros/iri-ros-pkg_hydro/metapackages/iri_core'}
 - svn: {local-name: iri_laser_icp, uri: 'https://devel.iri.upc.edu/pub/labrobotica/ros/iri-ros-pkg_hydro/metapackages/iri_odometry_publisher/iri_laser_icp'}
+
+# Forks with changes needed for PoseSLAM
+# REEM navigation updated with new format of config files for navigation which make exploration possible
+- git: {local-name: reem_navigation, uri: 'https://github.com/awesomebytes/reem_navigation', version: 'poseslam_exploration'}
+# reem_description modified base.urdf.xacro to invert the laser
+- git: {local-name: reem_robot, uri: 'https://github.com/awesomebytes/reem_robot', version: 'inverted_laser'}
