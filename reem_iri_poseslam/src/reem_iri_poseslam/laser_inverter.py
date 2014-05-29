@@ -20,7 +20,9 @@ class invert_laser():
 
     def laser_cb(self, data):
         laser_msg_inverted = copy.deepcopy(data)
-        laser_msg_inverted.angle_min, laser_msg_inverted.angle_max = laser_msg_inverted.angle_max, laser_msg_inverted.angle_min
+        # This makes the laser appear behind the robot, ouch
+        #laser_msg_inverted.angle_min, laser_msg_inverted.angle_max = laser_msg_inverted.angle_max, laser_msg_inverted.angle_min
+        laser_msg_inverted.ranges = laser_msg_inverted.ranges[::-1]
         self.pub.publish(laser_msg_inverted)
 
 
